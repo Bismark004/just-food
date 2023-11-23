@@ -3,16 +3,14 @@
     font-weight: 400;
     font-size: 34px;
     padding-bottom: 10px;
-}
-
-.ulFoods {
+  }
+  .ulFoods {
     list-style-type: none;
     padding: 0;
     font-size: 28px;
     height: 75%;
-}
-   
-.liFoods {
+  }
+  .liFoods {
     width: 100%;
     height: 18%;
     float: left;
@@ -22,26 +20,25 @@
     word-wrap: normal;
     margin-bottom: 5%;
     cursor: pointer;
-}
-.foodImg {
+  }
+  .foodImg {
     width: 12%;
     height: 85%;
     float: left;
     margin-right: 10px;
-}
-.foodItem {
+  }
+  .foodItem {
     width: 70%;
     text-align: left;
     font-size: 18px;
     height: 25%;
-}
-.foodDesc {
+  }
+  .foodDesc {
     margin: 0;
-}
-
-.foodPrice {
+  }
+  .foodPrice {
     margin: 0;
     color: rgba(85, 191, 233, 0.993);
     font-weight: 600;
-}
-
+  }
+  

@@ -1,9 +1,10 @@
 import {Fragment, useState } from 'react';
 import './App.css';
-import Foods from './food';
+import Foods from './Food.js';
 
 function App() {
-  const [menuItems, setMenuItems] = useState([{
+  const [menuItems, setMenuItems] = useState([
+  {
     id: 1,
     name: "Chicken Burger",
     quantity: 40,
@@ -63,7 +64,8 @@ const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
       </Fragment>
       )}
 
-      {isChooseFoodPage && <Foods foodItems={menuItems}></Foods>}
+      {isChooseFoodPage && (
+         <Foods foodItems={menuItems}></Foods>)}
       
 
       

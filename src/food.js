@@ -1,14 +1,14 @@
-import React, {Fragment} from "react";
+import React, { Fragment, useState } from "react";
 import "./Food.css"
 
 const Foods = (props) => {
     return (
         <Fragment>
             <h4 className="foodTitle"> Choose from our menu</h4>
-            <ul className="ulFood">
-                {props.fooodItems.map((item) => {
+            <ul className="ulFoods">
+                {props.foodItems.map((item) => {
                     return (
-                        <li key={item.id} className="liFoodselected">
+                        <li key={item.id} className="liFoods">
                             <img
                               className="foodImg"
                               src={require(`./images/${item.image}`)}
