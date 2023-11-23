@@ -33,7 +33,7 @@ const Foods = (props) => {
                   />
                   <div className="foodItem">
                     <p className="foodDesc">{item.desc}</p>
-                    <p className="foodPrice">{item.price}$</p>
+                    <p className="foodPrice">{item.price} cedis</p>
                   </div>
                 </li>
               );

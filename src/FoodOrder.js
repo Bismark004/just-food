@@ -31,7 +31,7 @@ const FoodOrder = (props) => {
 
                 </li>
                 <li>
-                    <p className="selFoodPrice">{totalAmount}$</p>
+                    <p className="selFoodPrice">{totalAmount} cedis</p>
                 </li>
 
                 <li className="selQuantity">
