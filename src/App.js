@@ -41,13 +41,25 @@ function App() {
 ])
 
 const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
+
+const updateMenuItemQuantity = (id, orderQuantity) => {
+  const updatedMenuItems = menuItems.map((item) => {
+    if (menuItems.id === id)
+      return {
+       ...item,
+       quantity: item.quantity - orderQuantity,
+    };
+    return item;
+  });
+  setMenuItems(updatedMenuItems);
+};
   return (
     <div className="App">
       <button className='toggleButton' onClick={() => setIsChooseFoodPage(!isChooseFoodPage)}>
         {isChooseFoodPage ? "AVailability Check" : "Order Food" }
       </button>
       
-      <h3 className="title"> Just Food Onlins Shop </h3>
+      <h3 className="title"> Marc Food Online Shop </h3>
       {!isChooseFoodPage && (
         <Fragment>
         <h4 className="subTitle"> Menu Availability </h4>
@@ -65,11 +77,11 @@ const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
       )}
 
       {isChooseFoodPage && (
-         <Foods foodItems={menuItems}></Foods>)}
-      
-
-      
+         <Foods foodItems={menuItems}
+                updateQuantity={updateMenuItemQuantity}
+         ></Foods>)}
     </div>
+
   );
 }
 
