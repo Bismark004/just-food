@@ -67,7 +67,6 @@ const Foods = (props) => {
                     // Callback function to return to the menu and clear selection
                     returnToMenu={() => setSelectedFood("")}
                     // Callback function to update the quantity of a food item
-                    updateQuantity={(id, quantity) => props.updateQuantity(id, quantity)}
                 />
             )}
         </Fragment>
