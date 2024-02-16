@@ -51,18 +51,7 @@ function App() {
   const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
 
   // Function to update the quantity of a menu item after an order is placed
-  const updateMenuItemQuantity = (id, orderQuantity) => {
-    const updatedMenuItems = menuItems.map((item) => {
-      if (item.id === id)
-        return {
-          ...item,
-          quantity: item.quantity - orderQuantity,
-        };
-      return item;
-    });
-    setMenuItems(updatedMenuItems);
-  };
-
+  
   // Rendering the component
   return (
     <div className="App">
@@ -93,7 +82,7 @@ function App() {
 
       {isChooseFoodPage && (
         // Rendering the Foods component for ordering food
-        <Foods foodItems={menuItems} updateQuantity={updateMenuItemQuantity}></Foods>
+        <Foods foodItems={menuItems} ></Foods>
       )}
     </div>
   );
