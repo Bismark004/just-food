@@ -1,11 +1,8 @@
 // Importing necessary modules from React library
 import { Fragment, useState } from 'react';
-
-// Importing the stylesheet for the component
 import './App.css';
-
-// Importing the Foods component
-import Foods from './Food.js';
+import Foods from './Food';
+export const foodItemsContext = React.createContext();
 
 // Main functional component definition for App
 function App() {
@@ -54,6 +51,7 @@ function App() {
   
   // Rendering the component
   return (
+    <foodItemsContext.Providerrovider value={menuItems}>
     <div className="App">
       {/* Button to toggle between availability check and order food pages */}
       <button className='toggleButton' onClick={() => setIsChooseFoodPage(!isChooseFoodPage)}>
@@ -85,8 +83,8 @@ function App() {
         <Foods foodItems={menuItems} ></Foods>
       )}
     </div>
+    </foodItemsContext.Providerrovider>
   );
 }
 
-// Exporting the App component as the default export
 export default App;
