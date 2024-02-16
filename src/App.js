@@ -1,7 +1,7 @@
 // Importing necessary modules from React library
 import { Fragment, useState } from 'react';
 import './App.css';
-import Foods from './Food';
+import Foods from './Food.js';
 export const foodItemsContext = React.createContext();
 
 // Main functional component definition for App

@@ -4,27 +4,27 @@ import "./FoodOrder.css";
 import { useContext } from "react";
 import { foodItemsContext } from "./App";
 
+
 // Functional component definition for FoodOrder
 const FoodOrder = (props) => {
-    // Destructuring props to get the selected food item
-    const { food } = props;
+    const selectedFood = props.food;
 
-    // State hooks to manage quantity, total amount, and order status
+    
     const [quantity, setQuantity] = useState(1);
-    const [totalAmount, setTotalAmount] = useState(food.price);
+    const [totalAmount, setTotalAmount] = useState(selectedFood.price);
     const [isOrdered, setIsOrdered] = useState(false);
+    const menuItems = useContext(foodItemsContext);
 
-    // Event handler for changing the quantity input
+
+    
     const handleQuantityChange = (event) => {
-        setTotalAmount(food.price * event.target.value);
+        setTotalAmount(selectedFood.price * event.target.value);
         setQuantity(event.target.value);
     };
 
     // Event handler for submitting the order
     const handleClick = () => {
-        // Updating the quantity of the selected food item
-       
-        // Setting the order status to true
+        
         setIsOrdered(true);
     };
 
@@ -32,17 +32,17 @@ const FoodOrder = (props) => {
     return (
         <Fragment>
             {/* Displaying the name and image of the selected food item */}
-            <h4 className="selFoodTitle">{food.name}</h4>
+            <h4 className="selFoodTitle">{selectedFood.name}</h4>
             <img
                 className="selFoodImg"
-                src={require(`./images/${food.image}`)}
-                alt={food.name}
+                src={require(`./images/${selectedFood.image}`)}
+                alt={selectedFood.name}
             />
 
             {/* List of details including description, price, quantity, name, and mobile number */}
             <ul className="ulFoodDetails">
                 <li>
-                    <p className="selFoodDesc">{food.desc}</p>
+                    <p className="selFoodDesc">{selectedFood.desc}</p>
                 </li>
                 <li>
                     <p className="selFoodPrice">{totalAmount} cedis</p>
