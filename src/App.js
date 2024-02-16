@@ -6,7 +6,7 @@ export const foodItemsContext = React.createContext();
 
 // Main functional component definition for App
 function App() {
-  // State hooks to manage the menu items and toggle between availability check and order food pages
+  const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
   const [menuItems, setMenuItems] = useState([
     // Sample menu items with properties like id, name, quantity, description, price, and image
     {
@@ -45,16 +45,18 @@ function App() {
     
   ]);
 
-  const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
+  
 
-  // Function to update the quantity of a menu item after an order is placed
+
   
   // Rendering the component
   return (
     <foodItemsContext.Providerrovider value={menuItems}>
     <div className="App">
       {/* Button to toggle between availability check and order food pages */}
-      <button className='toggleButton' onClick={() => setIsChooseFoodPage(!isChooseFoodPage)}>
+      <button className='toggleButton'
+       onClick={() => setIsChooseFoodPage(!isChooseFoodPage)}
+       >
         {isChooseFoodPage ? "Availability Check" : "Order Food" }
       </button>
       
@@ -80,7 +82,9 @@ function App() {
 
       {isChooseFoodPage && (
         // Rendering the Foods component for ordering food
-        <Foods foodItems={menuItems} ></Foods>
+        <Foods 
+        foodItems={menuItems} 
+        ></Foods>
       )}
     </div>
     </foodItemsContext.Providerrovider>
