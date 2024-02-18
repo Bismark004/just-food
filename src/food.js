@@ -1,20 +1,14 @@
 // Importing necessary modules from React library
 import React, { Fragment, useState } from "react";
-
-// Importing the stylesheet for the component
 import "./Food.css";
-
-// Importing the FoodOrder component
 import FoodOrder from "./FoodOrder";
 
-// Functional component definition for Foods
+
 const Foods = (props) => {
-    // State hook to track the selected food item
     const [selectedFood, setSelectedFood] = useState("");
 
     // Event handler for selecting a food item
     const handleSelect = (event) => {
-        // Finding the selected food item based on the dataset ID
         setSelectedFood(
             props.foodItems.find((item) => {
                 return item.id === parseInt(event.currentTarget.dataset.id);
