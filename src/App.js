@@ -1,7 +1,13 @@
+import {useMediaQuery} from 'react-responsive';
 import "./App.css";
 import React, { Fragment, useState } from "react";
 import Foods from "./food";
+
+
 export const foodItemsContext = React.createContext();
+
+
+
 const App = () => {
   const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
   const [menuItems, setMenuItems] = useState([
@@ -38,6 +44,12 @@ const App = () => {
       image: "ic.jpg",
     },
   ]);
+
+  const isLapOrDesktop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
 
 
   return (
