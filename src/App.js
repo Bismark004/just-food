@@ -54,35 +54,68 @@ const App = () => {
 
   return (
     <foodItemsContext.Provider value={menuItems}>
-    <div className="App">
-      <button
-        className="toggleButton"
-        onClick={() => setIsChooseFoodPage(!isChooseFoodPage)}
-      >
-        {isChooseFoodPage ? "Availability Check" : "Order Food"}
-      </button>
-      <h3 className="title">Just Food Online Shop</h3>
-      {!isChooseFoodPage && (
-        <Fragment>
-          <h4 className="subTitle">Menu Availability</h4>
-          <ul className="ulApp">
-            {menuItems.map((item) => {
-              return (
-                <li key={item.id} className="liApp">
-                  {item.name} - {item.quantity}
-                </li>
-              );
-            })}
-          </ul>
-        </Fragment>
-      )}
-      {isChooseFoodPage && (
-        <Foods
-          foodItems={menuItems}
-        
-        ></Foods>
-      )}
-    </div>
+    {isMobile && (
+       <div className="App">
+       <button
+         className="toggleButton"
+         onClick={() => setIsChooseFoodPage(!isChooseFoodPage)}
+       >
+         {isChooseFoodPage ? "Availability Check" : "Order Food"}
+       </button>
+       <h3 className="titleMobile">Just Food Online Shop</h3>
+       {!isChooseFoodPage && (
+         <Fragment>
+           <h4 className="subTitleMobile">Menu Availability</h4>
+           <ul className="ulAppMobile">
+             {menuItems.map((item) => {
+               return (
+                 <li key={item.id} className="liAppMobile">
+                   {item.name} - {item.quantity}
+                 </li>
+               );
+             })}
+           </ul>
+         </Fragment>
+       )}
+       {isChooseFoodPage && (
+         <Foods
+           foodItems={menuItems}
+         
+         ></Foods>
+       )}
+     </div>
+    )}
+    {isLapOrDesktop && (
+       <div className="App">
+       <button
+         className="toggleButton"
+         onClick={() => setIsChooseFoodPage(!isChooseFoodPage)}
+       >
+         {isChooseFoodPage ? "Availability Check" : "Order Food"}
+       </button>
+       <h3 className="title">Just Food Online Shop</h3>
+       {!isChooseFoodPage && (
+         <Fragment>
+           <h4 className="subTitle">Menu Availability</h4>
+           <ul className="ulApp">
+             {menuItems.map((item) => {
+               return (
+                 <li key={item.id} className="liApp">
+                   {item.name} - {item.quantity}
+                 </li>
+               );
+             })}
+           </ul>
+         </Fragment>
+       )}
+       {isChooseFoodPage && (
+         <Foods
+           foodItems={menuItems}
+         
+         ></Foods>
+       )}
+     </div>
+    )}
     </foodItemsContext.Provider>
   );
 };
